@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Логіка — концепція продажів</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Nunito:wght@500;600;700;800;900&display=swap">
+<style>
+:root{--ink:#1E2A5A;--blue:#2F5BEA;--sky:#BFE0FF;--peach:#FFC7AE;--coral:#FF9C7A;--bg:#FFE9DE;--cream:#FFF8F3;--blush:#FF9FB2;--pink:#FFD6DF;--muted:#3A4675}
+@page{size:1280px 720px;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg)}
+body{font-family:'Nunito',Inter,sans-serif;color:var(--ink)}
+.slide{position:relative;width:1280px;height:720px;overflow:hidden;page-break-after:always;break-after:page;padding:64px 72px 72px;display:flex;flex-direction:column;gap:26px;background:var(--bg);background-image:radial-gradient(#FFD3BF 2px,transparent 2px);background-size:28px 28px}
+.slide:last-child{page-break-after:auto;break-after:auto}
+.blue{background:var(--blue);background-image:radial-gradient(rgba(255,255,255,.12) 2px,transparent 2px);color:#fff}
+h1,h2,h3{font-family:'M PLUS Rounded 1c','Nunito',sans-serif;margin:0;letter-spacing:-.01em}
+h1{font-size:68px;line-height:1.08;font-weight:800}
+h2{font-size:44px;line-height:1.12;font-weight:800}
+h3{font-size:22px;line-height:1.25;font-weight:800}
+p{margin:0}
+.kicker{align-self:flex-start;padding:7px 16px;border-radius:999px;background:var(--sky);border:2.5px solid var(--ink);font-weight:900;font-size:15px;color:var(--ink)}
+.blue .kicker{background:var(--peach)}
+.lead{font-size:22px;line-height:1.5;font-weight:600;color:var(--muted);max-width:980px}
+.blue .lead{color:#DCE6FF}
+.card{background:var(--cream);border:3px solid var(--ink);border-radius:28px;padding:22px 24px;box-shadow:6px 6px 0 var(--ink);display:flex;flex-direction:column;gap:10px}
+.card p,.card li{font-size:17px;line-height:1.5;font-weight:600}
+.why{display:flex;gap:16px;align-items:flex-start;padding:18px 22px;border-radius:24px;background:var(--blue);color:#fff;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink)}
+.why b{flex:0 0 auto;padding:4px 12px;border-radius:999px;background:var(--peach);color:var(--ink);font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+.why p{font-size:18px;line-height:1.5;font-weight:600}
+.row{display:flex;gap:22px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+.chip{display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:2.5px solid var(--ink);background:var(--cream);font-weight:800;font-size:17px}
+.num{width:46px;height:46px;flex:0 0 46px;border-radius:50%;background:var(--peach);border:2.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:20px;color:var(--ink)}
+.foot{position:absolute;left:72px;right:72px;bottom:24px;display:flex;justify-content:space-between;font-size:13px;font-weight:800;color:var(--muted)}
+.blue .foot{color:#DCE6FF}
+table{width:100%;border-collapse:separate;border-spacing:0;background:var(--cream);border:3px solid var(--ink);border-radius:24px;overflow:hidden;box-shadow:6px 6px 0 var(--ink)}
+th,td{padding:10px 18px;text-align:left;font-size:17px;line-height:1.4;vertical-align:top;border-bottom:2px solid #F3D9CC}
+th{background:var(--sky);font-weight:900;font-size:15px;text-transform:uppercase;letter-spacing:.03em}
+tr:last-child td{border-bottom:0}
+td.big{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:22px;color:var(--blue);white-space:nowrap}
+/* mascot */
+.moti{position:relative;width:260px;height:250px}
+.moti i{position:absolute;display:block}
+.sparkle{position:absolute}
+</style>
+</head>
+<body>
+<!-- 1 TITLE -->
+<section class="slide blue" style="justify-content:center;gap:28px">
+<span class="kicker">IT-школа для дітей 7–16 років</span>
+<div class="row" style="align-items:center;justify-content:space-between">
+<div style="display:flex;flex-direction:column;gap:22px;max-width:760px">
+<h1>Концепція продажів курсів «Логіки»</h1>
+<p class="lead" style="font-size:24px">Як перетворити 8 курсів на шлях розвитку дитини й продавати його сучасними методами 2026 року</p>
+</div>
+<div class="moti" aria-hidden="true">
+<i style="left:30px;top:30px;width:200px;height:190px;border-radius:50% 50% 46% 46%/58% 58% 42% 42%;background:#8EAEFF;border:3px solid var(--ink)"></i>
+<i style="left:62px;top:52px;width:50px;height:24px;border-radius:50%;background:rgba(255,255,255,.55);transform:rotate(-20deg)"></i>
+<i style="left:90px;top:104px;width:18px;height:24px;border-radius:50%;background:var(--ink)"></i>
+<i style="left:152px;top:104px;width:18px;height:24px;border-radius:50%;background:var(--ink)"></i>
+<i style="left:64px;top:136px;width:30px;height:15px;border-radius:50%;background:var(--blush)"></i>
+<i style="left:166px;top:136px;width:30px;height:15px;border-radius:50%;background:var(--blush)"></i>
+<i style="left:116px;top:124px;width:28px;text-align:center;font-style:normal;font-weight:900;font-size:28px;line-height:1;color:var(--ink)">ω</i>
+<i style="left:120px;top:0;width:22px;height:36px;border-radius:50%;background:var(--coral);border:2.5px solid var(--ink);transform:rotate(25deg)"></i>
+</div>
+</div>
+<div class="foot"><span>логіка</span><span>2026</span></div>
+</section>
+
+<!-- 2 COURSES -->
+<section class="slide">
+<span class="kicker">Що продаємо</span>
+<h2>8 курсів у лінійці</h2>
+<div class="grid4" style="margin-top:6px">
+<div class="card" style="background:#D5F2E3"><h3>Комп’ютерна грамотність</h3><p>Будова ПК, Word / Excel / PowerPoint, хмарні сховища, графіка, безпека в мережі</p></div>
+<div class="card" style="background:#FFE3A8"><h3>Scratch</h3><p>Візуальне програмування: мультфільми та багаторівневі ігри</p></div>
+<div class="card" style="background:var(--peach)"><h3>Геймдизайн Roblox</h3><p>6 власних ігор на Lua, а ще як просувати й продавати гру</p></div>
+<div class="card" style="background:#DCE6FF"><h3>Створення сайтів</h3><p>HTML і CSS: власний сайт із меню, медіа та публікацією</p></div>
+<div class="card" style="background:var(--pink)"><h3>Графічний дизайн</h3><p>Ретуш, 3D, вектор, анімація, власний бренд, проєкти зі ШІ</p></div>
+<div class="card" style="background:var(--sky)"><h3>Python</h3><p>Справжній код: чат-боти, програми, ігри з графікою та фізикою</p></div>
+<div class="card" style="background:#E4DDFF"><h3>Фронтенд</h3><p>Усе, що бачить користувач вебзастосунку</p></div>
+<div class="card" style="background:var(--cream)"><h3>Англійська</h3><p>Британська англійська, рівні A0–B2, швидкий друк та ігри</p></div>
+</div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 3 MAIN IDEA -->
+<section class="slide">
+<span class="kicker">1 · Головна ідея</span>
+<h2>Продаємо шлях розвитку дитини, а&nbsp;не&nbsp;окремі курси</h2>
+<div class="card" style="background:var(--cream);padding:28px 32px">
+<span style="font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--blue)">Позиціонування</span>
+<p style="font-family:'M PLUS Rounded 1c',sans-serif;font-size:30px;line-height:1.3;font-weight:800">«Перетворюємо час дитини за комп’ютером на корисний. За рік у неї буде власна гра, сайт і портфоліо».</p>
+</div>
+<div class="grid2">
+<div class="card" style="background:var(--sky)"><h3>Платять батьки</h3><p>Бояться, що дитина «залипає» в гаджетах. Обіцяємо користь і безпеку.</p></div>
+<div class="card" style="background:var(--peach)"><h3>Навчається дитина</h3><p>Хоче грати й створювати. Обіцяємо: «зробиш власну гру в Roblox».</p></div>
+</div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 4 TRACK -->
+<section class="slide">
+<span class="kicker">1 · IT-трек</span>
+<h2>Курси складаються в карту зростання за віком</h2>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div class="row" style="align-items:center;gap:18px"><span class="chip" style="background:var(--ink);color:#fff;min-width:150px;justify-content:center">7–9 років</span><span class="chip" style="background:#D5F2E3">Комп. грамотність</span><b style="font-size:26px">→</b><span class="chip" style="background:#FFE3A8">Scratch: мультфільми та ігри</span></div>
+<div class="row" style="align-items:center;gap:18px"><span class="chip" style="background:var(--ink);color:#fff;min-width:150px;justify-content:center">10–12 років</span><span class="chip" style="background:var(--peach)">Геймдизайн Roblox / Lua</span><span class="chip" style="background:var(--pink)">Графічний дизайн</span><span class="chip" style="background:#DCE6FF">Сайти HTML / CSS</span></div>
+<div class="row" style="align-items:center;gap:18px"><span class="chip" style="background:var(--ink);color:#fff;min-width:150px;justify-content:center">12–16 років</span><span class="chip" style="background:var(--sky)">Python</span><b style="font-size:26px">→</b><span class="chip" style="background:#E4DDFF">Фронтенд</span></div>
+<div class="row" style="align-items:center;gap:18px"><span class="chip" style="background:var(--blue);color:#fff;min-width:150px;justify-content:center">Паралельно</span><span class="chip">Англійська A0 → B2</span></div>
+</div>
+<div class="why" style="margin-top:6px"><b>Навіщо</b><p>Окремий курс купують один раз, шлях — на 2–4 роки. Основний дохід дає LTV: скільки учень платить за весь час навчання. Кожен курс продаємо як сходинку до наступного.</p></div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 5 SEGMENTS -->
+<section class="slide">
+<span class="kicker">2 · Сегменти</span>
+<h2>Чотири типи батьків — чотири меседжі</h2>
+<div class="grid4">
+<div class="card" style="background:var(--sky)"><h3>«Тривожні»</h3><p style="font-size:14px;font-weight:800;color:var(--muted)">діти 7–10 років</p><p><b>Біль:</b> соцмережі, шахраї, віруси, залежність від ігор</p><p><b>Курси:</b> грамотність, Scratch</p><p style="color:var(--blue);font-weight:800">«Дитина навчиться безпечно поводитися в інтернеті»</p></div>
+<div class="card" style="background:#DCE6FF"><h3>«Про майбутнє»</h3><p style="font-size:14px;font-weight:800;color:var(--muted)">діти 11–16 років</p><p><b>Біль:</b> потрібна професія, а школа цього не дає</p><p><b>Курси:</b> Python, Фронтенд, Сайти</p><p style="color:var(--blue);font-weight:800">«Мова, якою пишуть Instagram і Google»</p></div>
+<div class="card" style="background:var(--peach)"><h3>«Здалися геймеру»</h3><p style="font-size:14px;font-weight:800;color:var(--muted)">будь-який вік</p><p><b>Біль:</b> цілими днями сидить у Roblox</p><p><b>Курс:</b> Геймдизайн</p><p style="color:var(--blue);font-weight:800">«Хай не просто грає, а створює й навіть заробляє»</p></div>
+<div class="card" style="background:var(--pink)"><h3>Творча дитина</h3><p style="font-size:14px;font-weight:800;color:var(--muted)">любить малювати</p><p><b>Біль:</b> не знаємо, куди це спрямувати</p><p><b>Курс:</b> Графічний дизайн + ШІ</p><p style="color:var(--blue);font-weight:800">«Власний бренд, логотип, анімація, 3D»</p></div>
+</div>
+<div class="why"><b>Навіщо</b><p>Реклама у 2026 році працює через креатив: Meta і TikTok самі знаходять аудиторію під конкретний меседж. Одне загальне оголошення програє чотирьом точковим.</p></div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- J1 JTBD INTRO -->
+<section class="slide blue">
+<span class="kicker">JTBD · Jobs To Be Done</span>
+<h2>Яку «роботу» батьки доручають курсу</h2>
+<p class="lead" style="font-size:21px">Батьки купують не «курс Python». Вони «наймають» школу, щоб розв’язати конкретне завдання у своєму житті. Коли розумієш це завдання, легше писати рекламу, будувати квіз і проводити пробний урок.</p>
+<div class="card" style="color:var(--ink);padding:26px 30px">
+<span style="font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--blue)">Формула роботи</span>
+<p style="font-family:'M PLUS Rounded 1c',sans-serif;font-size:28px;line-height:1.35;font-weight:800">Коли <span style="background:var(--sky);padding:0 8px;border-radius:10px">[ситуація]</span>, я хочу <span style="background:var(--peach);padding:0 8px;border-radius:10px">[мотивація]</span>, щоб <span style="background:var(--pink);padding:0 8px;border-radius:10px">[результат]</span></p>
+</div>
+<div class="grid3">
+<div class="card" style="color:var(--ink);background:var(--sky)"><h3>Сегменти</h3><p>Відповідають на питання «хто купує»</p></div>
+<div class="card" style="color:var(--ink);background:var(--peach)"><h3>JTBD</h3><p>Відповідає на питання «навіщо і чому саме зараз»</p></div>
+<div class="card" style="color:var(--ink);background:var(--pink)"><h3>Разом</h3><p>Дають точний текст реклами для кожної аудиторії</p></div>
+</div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- J2 PARENT JOBS -->
+<section class="slide">
+<span class="kicker">JTBD · Роботи батьків</span>
+<h2>Чотири завдання, з якими приходять батьки</h2>
+<div class="grid2" style="gap:18px">
+<div class="card" style="background:var(--peach);gap:8px"><p style="font-size:17.5px;font-weight:700;line-height:1.45">«Коли бачу, що дитина цілий вечір сидить в іграх, я хочу спрямувати цей інтерес на щось корисне, щоб перестати сваритися й не почуватися винним»</p><p style="font-size:15px"><b>Наймає:</b> Scratch, Геймдизайн Roblox · <b>Меседж:</b> «Хай не грає, а створює»</p></div>
+<div class="card" style="background:var(--sky);gap:8px"><p style="font-size:17.5px;font-weight:700;line-height:1.45">«Коли читаю про шахраїв і цькування в мережі, я хочу, щоб дитина вміла захиститися сама, щоб не контролювати кожен її крок»</p><p style="font-size:15px"><b>Наймає:</b> Комп’ютерна грамотність · <b>Меседж:</b> «Навчимо розпізнавати обман»</p></div>
+<div class="card" style="background:#DCE6FF;gap:8px"><p style="font-size:17.5px;font-weight:700;line-height:1.45">«Коли думаю про майбутнє дитини, я хочу дати їй навичку, яка точно знадобиться, щоб бути певним, що зробив усе можливе»</p><p style="font-size:15px"><b>Наймає:</b> Python, Фронтенд, Сайти · <b>Меседж:</b> «Перше портфоліо до 16 років»</p></div>
+<div class="card" style="background:var(--pink);gap:8px"><p style="font-size:17.5px;font-weight:700;line-height:1.45">«Коли дитина постійно малює, я хочу знайти заняття, де захоплення стане навичкою, щоб вона повірила в себе»</p><p style="font-size:15px"><b>Наймає:</b> Графічний дизайн + ШІ · <b>Меседж:</b> «Власний бренд, логотип і анімація»</p></div>
+</div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- J3 CHILD JOBS -->
+<section class="slide">
+<span class="kicker">JTBD · Роботи дитини</span>
+<h2>Дитина теж «наймає» курс, і в неї свої причини</h2>
+<div class="grid3">
+<div class="card" style="background:var(--cream)"><span style="font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--blue)">Функціональна</span><h3>«Хочу зробити власну гру»</h3><p>Зрозуміти, як влаштована улюблена гра, і зібрати свою: з рівнями, персонажами та фізикою.</p></div>
+<div class="card" style="background:var(--peach)"><span style="font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--blue)">Емоційна</span><h3>«Хочу відчути: я можу»</h3><p>Довести справу до кінця й побачити результат за один урок, а не за пів року.</p></div>
+<div class="card" style="background:var(--sky)"><span style="font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--blue)">Соціальна</span><h3>«Хочу, щоб друзі сказали: круто!»</h3><p>Дати посилання на свою гру в Roblox, показати сайт чи логотип однокласникам.</p></div>
+</div>
+<div class="why"><b>Що з цього</b><p>Результат має бути вже на першому уроці, його має бути легко показати (посилання, відео, портфоліо), а в рекламі для дітей говоримо про «свою гру», а не про «навички майбутнього».</p></div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- J4 FORCES -->
+<section class="slide">
+<span class="kicker">JTBD · Сили прогресу</span>
+<h2>Що штовхає до покупки і що її гальмує</h2>
+<div class="grid2" style="gap:18px">
+<div class="card" style="background:var(--peach)"><h3>Поштовх: «так далі не можна»</h3><p>Сварки через гаджети, погані оцінки з інформатики, історія про шахраїв у знайомих.</p><p style="color:var(--blue);font-weight:800">Використовуємо: реклама прямо називає цю ситуацію</p></div>
+<div class="card" style="background:var(--sky)"><h3>Тяжіння: «а ось як може бути»</h3><p>Дитина однолітків зробила свою гру, відео з демо-дня, зрозумілий шлях до 16 років.</p><p style="color:var(--blue);font-weight:800">Використовуємо: відео з роботами учнів, IT-трек</p></div>
+<div class="card" style="background:var(--pink)"><h3>Тривоги: «а раптом не вийде»</h3><p>«Кине за місяць», «дорого», «це ще один екран», «вона нічого не вміє».</p><p style="color:var(--blue);font-weight:800">Знімаємо: гарантія повернення, пробний урок, усе з нуля</p></div>
+<div class="card" style="background:var(--cream)"><h3>Звички: «і так нормально»</h3><p>«Хай просто грає», «є гурток біля дому», «на YouTube усе безкоштовно».</p><p style="color:var(--blue);font-weight:800">Знімаємо: щомісячний звіт і результат, якого не дає YouTube</p></div>
+</div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- J5 REAL COMPETITORS -->
+<section class="slide">
+<span class="kicker">JTBD · Справжні конкуренти</span>
+<h2>Ми конкуруємо не лише з іншими IT-школами</h2>
+<div class="grid3" style="gap:18px">
+<div class="card" style="background:var(--cream)"><h3>Спортивні секції та гуртки</h3><p>Теж займають час із користю. <b>Наш аргумент:</b> розвиваємо логіку й даємо навичку професії.</p></div>
+<div class="card" style="background:var(--sky)"><h3>Репетитори</h3><p>Знімають тривогу через оцінки. <b>Наш аргумент:</b> дитина вчиться сама, бо їй цікаво.</p></div>
+<div class="card" style="background:var(--peach)"><h3>YouTube і безкоштовні уроки</h3><p>Безкоштовно, але без системи. <b>Наш аргумент:</b> викладач, група, готовий проєкт і звіт.</p></div>
+<div class="card" style="background:var(--pink)"><h3>Сам Roblox і TikTok</h3><p>Борються за той самий час дитини. <b>Наш аргумент:</b> та сама гра, але дитина в ній автор.</p></div>
+<div class="card" style="background:#DCE6FF"><h3>«Нічого не робити»</h3><p>Найчастіший вибір. <b>Наш аргумент:</b> безкоштовний пробний урок без зобов’язань.</p></div>
+<div class="card" style="background:#E4DDFF"><h3>Інші IT-школи</h3><p>Обіцяють те саме. <b>Наш аргумент:</b> зрозумілий трек на роки й видимий результат щомісяця.</p></div>
+</div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- J6 VALIDATE + APPLY -->
+<section class="slide">
+<span class="kicker">JTBD · Перевірка і застосування</span>
+<h2>Це гіпотези: спершу перевіряємо, потім упроваджуємо</h2>
+<div class="grid2" style="gap:22px">
+<div class="card" style="background:var(--cream)"><h3>Як перевірити: 10–15 інтерв’ю</h3><p>Говоримо з батьками, які нещодавно купили курс, і з тими, хто пішов після пробного уроку.</p><ul><li>Що відбувалося, коли ви почали шукати курси?</li><li>Що пробували до нас? Чому не підійшло?</li><li>Що мало не зупинило від покупки?</li><li>У який момент вирішили: «беремо»?</li><li>Що змінилося вдома за перший місяць?</li></ul><p style="color:var(--blue);font-weight:800">Повний сценарій — в окремому документі</p></div>
+<div class="card" style="background:var(--sky)"><h3>Де застосувати</h3><ul><li><b>Реклама:</b> окремий креатив під кожну роботу, перша фраза описує ситуацію батьків</li><li><b>Квіз:</b> питання «Що вас турбує зараз?» замість «Що вас цікавить?»</li><li><b>Пробний урок:</b> менеджер уточнює роботу й відповідає на тривоги із «сил прогресу»</li><li><b>Утримання:</b> звіт показує прогрес саме в тому завданні, з яким прийшли</li></ul></div>
+</div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 6 FUNNEL OVERVIEW -->
+<section class="slide blue">
+<span class="kicker">3 · Воронка продажів</span>
+<h2>Шість кроків від першого відео до рекомендації</h2>
+<div class="grid3" style="margin-top:8px">
+<div class="card" style="color:var(--ink)"><div class="row" style="gap:14px;align-items:center"><span class="num">1</span><h3>Залучення</h3></div><p>Короткі відео й роботи учнів</p></div>
+<div class="card" style="color:var(--ink)"><div class="row" style="gap:14px;align-items:center"><span class="num">2</span><h3>Лід-магніт</h3></div><p>Квіз, чек-лист, міні-марафон</p></div>
+<div class="card" style="color:var(--ink)"><div class="row" style="gap:14px;align-items:center"><span class="num">3</span><h3>Миттєва відповідь</h3></div><p>ШІ-асистент 24/7 і менеджер за 5 хвилин</p></div>
+<div class="card" style="color:var(--ink)"><div class="row" style="gap:14px;align-items:center"><span class="num">4</span><h3>Пробний урок</h3></div><p>Головна точка продажу</p></div>
+<div class="card" style="color:var(--ink)"><div class="row" style="gap:14px;align-items:center"><span class="num">5</span><h3>Утримання</h3></div><p>Батьки бачать прогрес</p></div>
+<div class="card" style="color:var(--ink)"><div class="row" style="gap:14px;align-items:center"><span class="num">6</span><h3>Допродажі</h3></div><p>Наступний курс, англійська, рекомендації</p></div>
+</div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 7 STEP 1 -->
+<section class="slide">
+<div class="row" style="gap:16px;align-items:center"><span class="num">1</span><span class="kicker">Крок 1 · Залучення</span></div>
+<h2>Короткі відео й контент від учнів</h2>
+<div class="grid3">
+<div class="card" style="background:var(--peach)"><h3>Reels і TikTok з роботами дітей</h3><p>«Мишкові 11 років, ось його гра в Roblox», «Аня за 3 місяці зробила сайт». Головний канал 2025–2026 років.</p></div>
+<div class="card" style="background:var(--sky)"><h3>Ігри учнів у Roblox</h3><p>З назвою школи в описі. Їх бачать мільйони дітей-гравців: продукт сам стає рекламою.</p></div>
+<div class="card" style="background:var(--pink)"><h3>Короткі факти для батьків</h3><p>«5 ознак, що з вашою дитиною листується шахрай» — тема курсу грамотності.</p></div>
+</div>
+<div class="why"><b>Чому</b><p>Люди втомилися від реклами, а роботі реальної дитини вірять. Це UGC — контент, створений користувачами.</p></div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 8 STEP 2 -->
+<section class="slide">
+<div class="row" style="gap:16px;align-items:center"><span class="num">2</span><span class="kicker">Крок 2 · Лід-магніт</span></div>
+<h2>Безкоштовна цінність в обмін на контакт</h2>
+<div class="grid3">
+<div class="card" style="background:var(--sky)"><h3>Квіз</h3><p>«Який IT-напрям підходить вашій дитині?» 5–7 питань, наприкінці — персональний трек. Контакт потрапляє в Telegram або Viber.</p></div>
+<div class="card" style="background:var(--cream)"><h3>Чек-лист у PDF</h3><p>«Безпека дитини в інтернеті».</p></div>
+<div class="card" style="background:var(--peach)"><h3>Міні-марафон</h3><p>«Створи гру за 3 дні» у Scratch або Roblox. Безкоштовно, у Telegram-боті.</p></div>
+</div>
+<div class="why"><b>Чому</b><p>Квіз дає конверсію в контакт у 3–5 разів вищу за звичайну форму: цікаво дізнатися результат про свою дитину. Марафон дає перший успіх — і вже дитина вмовляє батьків.</p></div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 9 STEP 3 -->
+<section class="slide">
+<div class="row" style="gap:16px;align-items:center"><span class="num">3</span><span class="kicker">Крок 3 · Миттєва відповідь</span></div>
+<h2>ШІ-асистент і швидкість</h2>
+<div class="grid2">
+<div class="card" style="background:var(--sky);padding:28px"><h3 style="font-size:26px">ШІ-консультант 24/7</h3><p>У Telegram, Viber та Instagram. Відповідає про ціну й розклад, одразу записує на пробний урок.</p></div>
+<div class="card" style="background:var(--peach);padding:28px"><h3 style="font-size:26px">Менеджер за 5 хвилин</h3><p>Жива людина зв’язується протягом 5 хвилин після заявки.</p></div>
+</div>
+<div class="why"><b>Чому</b><p>Правило speed-to-lead: якщо відповісти за перші 5 хвилин, шанс продажу в рази вищий, ніж через годину. Батьки залишають заявки в 3–4 школи, і виграє перша.</p></div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 10 STEP 4 -->
+<section class="slide">
+<div class="row" style="gap:16px;align-items:center"><span class="num">4</span><span class="kicker">Крок 4 · Пробний урок · 40–60 хвилин</span></div>
+<h2>Головна точка продажу</h2>
+<div class="grid4">
+<div class="card" style="background:var(--cream)"><span class="num">1</span><h3>Власний проєкт</h3><p>Персонаж, міні-гра чи сторінка сайту. Дитина забирає результат із собою.</p></div>
+<div class="card" style="background:var(--cream)"><span class="num">2</span><h3>10 хвилин — батькам</h3><p>Показуємо, що зробила дитина, і називаємо сильні сторони: «у неї чудова логіка».</p></div>
+<div class="card" style="background:var(--cream)"><span class="num">3</span><h3>Карта розвитку</h3><p>PDF із треком на 1–2 роки, можна генерувати за допомогою ШІ.</p></div>
+<div class="card" style="background:var(--cream)"><span class="num">4</span><h3>Обмежена пропозиція</h3><p>Знижка або бонус за оплату протягом 24–48 годин.</p></div>
+</div>
+<div class="why"><b>Чому</b><p>Батьки бачать результат на власні очі, дитина хоче продовжувати, а карта розвитку перетворює разову покупку на план на роки.</p></div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 11 STEP 5 -->
+<section class="slide">
+<div class="row" style="gap:16px;align-items:center"><span class="num">5</span><span class="kicker">Крок 5 · Утримання</span></div>
+<h2>Батьки мають бачити прогрес</h2>
+<div class="grid4">
+<div class="card" style="background:var(--sky)"><h3>Звіт щомісяця</h3><p>Відео або коротке повідомлення: що зробила дитина і чого навчилася.</p></div>
+<div class="card" style="background:var(--peach)"><h3>Демо-дні</h3><p>Раз на квартал діти презентують проєкти. Плюс готовий контент для соцмереж.</p></div>
+<div class="card" style="background:var(--pink)"><h3>Гейміфікація</h3><p>Рівні, бейджі, сертифікати, рейтинг учнів.</p></div>
+<div class="card" style="background:#DCE6FF"><h3>Портфоліо</h3><p>Усі проєкти на одній сторінці — посиланням зручно похвалитися бабусям і друзям.</p></div>
+</div>
+<div class="why"><b>Чому</b><p>Головна причина відтоку — батьки «не розуміють, за що платять». Видимий результат знімає це питання, а утримати учня в 5–7 разів дешевше, ніж знайти нового.</p></div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 12 STEP 6 -->
+<section class="slide">
+<div class="row" style="gap:16px;align-items:center"><span class="num">6</span><span class="kicker">Крок 6 · Допродажі та рекомендації</span></div>
+<h2>Кожен учень веде до наступного кроку</h2>
+<div class="grid3">
+<div class="card" style="background:var(--cream)"><h3>Наступна сходинка</h3><p>За місяць до кінця курсу — урок-знайомство з наступним курсом треку.</p></div>
+<div class="card" style="background:var(--sky)"><h3>Англійська як крос-продаж</h3><p>«Усі мови програмування — англійською. Додайте англійську до IT-курсу зі знижкою».</p></div>
+<div class="card" style="background:var(--peach)"><h3>«Приведи друга»</h3><p>Обидва отримують безкоштовний місяць. Дітям — бонус: ексклюзивний скін або асет для власної гри.</p></div>
+</div>
+<div class="why"><b>Чому</b><p>Діти дружать і хочуть навчатися разом. Батьки довіряють рекомендаціям інших батьків більше, ніж будь-якій рекламі.</p></div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 13 PRICING -->
+<section class="slide">
+<span class="kicker">4 · Ціни та пропозиції</span>
+<h2>Шість інструментів ціноутворення</h2>
+<div class="grid3">
+<div class="card" style="background:var(--cream)"><h3>Підписка</h3><p>Щомісячно з автосписанням: нижчий поріг входу, менший відтік.</p></div>
+<div class="card" style="background:var(--sky)"><h3>Три тарифи</h3><p>Група / міні-група / індивідуально. Ефект якоря: дорогий тариф робить середній вигідним.</p></div>
+<div class="card" style="background:var(--cream)"><h3>Пакет «IT + Англійська»</h3><p>Дешевше, ніж окремо.</p></div>
+<div class="card" style="background:var(--peach)"><h3>Річний трек</h3><p>Передоплата зі знижкою 15–20%: гроші одразу й учень на рік.</p></div>
+<div class="card" style="background:var(--cream)"><h3>Гарантія</h3><p>«Не сподобалося після першого місяця — повернемо гроші». Знімає страх покупки, а повернень зазвичай мало.</p></div>
+<div class="card" style="background:var(--pink)"><h3>Сімейна знижка</h3><p>На другу дитину.</p></div>
+</div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 14 B2B2C -->
+<section class="slide">
+<span class="kicker">5 · Додаткові канали (B2B2C)</span>
+<h2>Партнери, які приводять батьків</h2>
+<div class="grid2">
+<div class="card" style="background:var(--sky)"><h3>Школи й садочки</h3><p>Безкоштовний урок із кібербезпеки для класу, батькам — запрошення на пробний урок.</p></div>
+<div class="card" style="background:var(--peach)"><h3>Роботодавці</h3><p>IT-компанії та великий бізнес дають курси для дітей працівників як бонус.</p></div>
+<div class="card" style="background:var(--pink)"><h3>Блогери</h3><p>Мамоблогери, а також дитячі Roblox- і YouTube-блогери.</p></div>
+<div class="card" style="background:var(--cream)"><h3>Сезонні запуски</h3><p>«IT-табір на канікулах», «Новорічний інтенсив: створи свою гру». Привід купити просто зараз.</p></div>
+</div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 15 METRICS -->
+<section class="slide">
+<span class="kicker">6 · Метрики</span>
+<h2>Цифри, які треба відстежувати</h2>
+<table>
+<tr><th>Метрика</th><th>Що показує</th><th>Орієнтир</th></tr>
+<tr><td><b>Заявка → пробний урок</b></td><td>Роботу менеджерів і бота</td><td class="big">50–70%</td></tr>
+<tr><td><b>Пробний урок → оплата</b></td><td>Якість пробного уроку</td><td class="big">30–50%</td></tr>
+<tr><td><b>Утримання через 3 місяці</b></td><td>Якість навчання</td><td class="big">&gt;70%</td></tr>
+<tr><td><b>LTV / вартість залучення</b></td><td>Окупність реклами</td><td class="big">&gt;3</td></tr>
+<tr><td><b>Перехід на наступний курс</b></td><td>Роботу «треку»</td><td class="big">&gt;40%</td></tr>
+</table>
+<div class="why"><b>Навіщо</b><p>Без цифр незрозуміло, де губляться гроші. Якщо пробні уроки не конвертуються, проблема не в рекламі, а в самому уроці.</p></div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 16 PLAN -->
+<section class="slide">
+<span class="kicker">7 · План запуску</span>
+<h2>Перші 90 днів</h2>
+<div class="grid3" style="flex:1 1 auto">
+<div class="card" style="background:var(--sky)"><span style="font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:30px;color:var(--blue)">Місяць 1</span><ul><li>10–15 JTBD-інтерв’ю з батьками</li><li>Квіз і лендинги під 4 сегменти</li><li>Telegram-бот зі ШІ-асистентом</li><li>CRM</li><li>Скрипт і формат пробного уроку</li><li>Перші 20 відео з роботами учнів</li></ul></div>
+<div class="card" style="background:var(--peach)"><span style="font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:30px;color:var(--blue)">Місяць 2</span><ul><li>Реклама в Meta і TikTok: 3–5 креативів на сегмент</li><li>Перший безкоштовний марафон «Гра за 3 дні»</li><li>Реферальна програма</li></ul></div>
+<div class="card" style="background:var(--pink)"><span style="font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:30px;color:var(--blue)">Місяць 3</span><ul><li>Перший демо-день</li><li>Звіти батькам</li><li>Допродаж англійської</li><li>Переговори з 3–5 школами</li><li>Аналіз метрик, вимкнення слабких каналів</li></ul></div>
+</div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<!-- 17 SUMMARY -->
+<section class="slide blue" style="justify-content:center;gap:30px">
+<span class="kicker">Коротко</span>
+<h1 style="font-size:54px;max-width:1050px">Дитячі курси продає видимий результат дитини</h1>
+<p class="lead" style="font-size:24px">Не реклама «у нас хороші викладачі», а власна гра, сайт чи логотип, який можна показати. Він сам перетворюється на контент, відгуки, рекомендації та повторні покупки.</p>
+<div class="row" style="flex-wrap:wrap;gap:12px">
+<span class="chip" style="color:var(--ink)">Контент</span><span class="chip" style="color:var(--ink)">Відгуки</span><span class="chip" style="color:var(--ink)">Рекомендації</span><span class="chip" style="color:var(--ink)">Повторні покупки</span>
+</div>
+<div class="foot"><span>логіка · концепція продажів</span><span></span></div>
+</section>
+
+<script>document.querySelectorAll(".slide").forEach((s,i)=>{if(i){const f=s.querySelector(".foot span:last-child");if(f)f.textContent=i+1;}});</script>
+
+</body>
+</html>

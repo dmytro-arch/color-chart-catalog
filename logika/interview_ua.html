@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Логіка — сценарій JTBD-інтерв’ю</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Nunito:wght@500;600;700;800;900&display=swap">
+<style>
+:root{--ink:#1E2A5A;--blue:#2F5BEA;--sky:#BFE0FF;--peach:#FFC7AE;--coral:#FF9C7A;--bg:#FFE9DE;--cream:#FFF8F3;--blush:#FF9FB2;--pink:#FFD6DF;--muted:#3A4675;--lilac:#E4DDFF;--mint:#D5F2E3;--butter:#FFE3A8;--ice:#DCE6FF}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff}
+body{font-family:'Nunito',Inter,sans-serif;color:var(--ink);font-size:13.5px;line-height:1.5}
+h1,h2,h3{font-family:'M PLUS Rounded 1c','Nunito',sans-serif;margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:34px;line-height:1.1;font-weight:800}
+h2{font-size:22px;line-height:1.2;font-weight:800;display:flex;align-items:center;gap:10px;break-after:avoid;page-break-after:avoid}
+.goal,h2+p{break-after:avoid}
+h3{font-size:15.5px;line-height:1.3;font-weight:800}
+p{margin:0}
+ul,ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.sec{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.n{width:30px;height:30px;flex:0 0 30px;border-radius:50%;background:var(--peach);border:2px solid var(--ink);display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+.card{background:var(--cream);border:2px solid var(--ink);border-radius:16px;padding:12px 14px;box-shadow:3px 3px 0 var(--ink);display:flex;flex-direction:column;gap:6px;break-inside:avoid}
+.say{background:var(--sky);border:2px solid var(--ink);border-radius:16px 16px 16px 4px;padding:10px 14px;font-weight:600;break-inside:avoid}
+.say b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:2px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.block{border:2px solid var(--ink);border-radius:16px;overflow:hidden;break-inside:avoid;box-shadow:3px 3px 0 var(--ink)}
+.block .hd{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 14px;background:var(--blue);color:#fff}
+.block .hd h3{color:#fff}
+.block .hd span{font-weight:900;font-size:12px;padding:2px 10px;border-radius:999px;background:var(--peach);color:var(--ink)}
+.block .bd{padding:10px 14px 12px;background:var(--cream);display:flex;flex-direction:column;gap:6px}
+.goal{font-size:12.5px;font-weight:700;color:var(--muted)}
+.q li{font-weight:600}
+.q li i{font-style:normal;color:var(--muted);font-weight:600;font-size:12.5px}
+table{width:100%;border-collapse:separate;border-spacing:0;border:2px solid var(--ink);border-radius:14px;overflow:hidden;break-inside:avoid}
+th,td{padding:7px 10px;text-align:left;vertical-align:top;border-bottom:1.5px solid #F0D5C8;font-size:13px}
+th{background:var(--sky);font-weight:900;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
+tr:last-child td{border-bottom:0}
+.tip{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border-radius:14px;background:var(--butter);border:2px solid var(--ink);font-weight:600;break-inside:avoid}
+.tip b{flex:0 0 auto;padding:1px 9px;border-radius:999px;background:var(--ink);color:#fff;font-size:11px;letter-spacing:.05em;text-transform:uppercase;margin-top:2px}
+.pb{break-before:page}
+.line{border-bottom:1.5px dashed #B9B2D0;height:22px}
+.fill td{height:30px}
+.forces{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.forces div{border:2px solid var(--ink);border-radius:12px;padding:8px 10px;min-height:66px;font-weight:800;font-size:12.5px}
+</style>
+</head>
+<body>
+
+<!-- COVER BLOCK -->
+<div style="padding:24px 26px;border-radius:24px;background:var(--blue);color:#fff;border:2.5px solid var(--ink);box-shadow:5px 5px 0 var(--ink);display:flex;justify-content:space-between;gap:20px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:10px">
+<span style="align-self:flex-start;padding:3px 12px;border-radius:999px;background:var(--peach);color:var(--ink);border:2px solid var(--ink);font-weight:900;font-size:12px">Логіка · робочий документ</span>
+<h1>Сценарій JTBD-інтерв’ю з батьками</h1>
+<p style="font-size:14.5px;color:#DCE6FF;font-weight:600;max-width:480px">Для менеджерів і маркетологів, які проводитимуть розмови. Одне інтерв’ю — 40–50 хвилин. Потрібно 10–15 розмов.</p>
+</div>
+<div style="position:relative;width:110px;height:100px;flex:0 0 110px" aria-hidden="true">
+<i style="position:absolute;left:8px;top:14px;width:94px;height:84px;border-radius:50% 50% 46% 46%/58% 58% 42% 42%;background:#8EAEFF;border:2.5px solid var(--ink)"></i>
+<i style="position:absolute;left:38px;top:46px;width:8px;height:11px;border-radius:50%;background:var(--ink)"></i>
+<i style="position:absolute;left:64px;top:46px;width:8px;height:11px;border-radius:50%;background:var(--ink)"></i>
+<i style="position:absolute;left:24px;top:62px;width:14px;height:7px;border-radius:50%;background:var(--blush)"></i>
+<i style="position:absolute;left:72px;top:62px;width:14px;height:7px;border-radius:50%;background:var(--blush)"></i>
+<i style="position:absolute;left:48px;top:54px;width:14px;text-align:center;font-style:normal;font-weight:900;font-size:15px;line-height:1;color:var(--ink)">ω</i>
+<i style="position:absolute;left:50px;top:0;width:10px;height:17px;border-radius:50%;background:var(--coral);border:2px solid var(--ink);transform:rotate(25deg)"></i>
+</div>
+</div>
+
+<!-- 1 -->
+<div class="sec">
+<h2><span class="n">1</span>Навіщо ці розмови</h2>
+<p>Ми хочемо дізнатися, <b>яку задачу у своєму житті батьки розв’язують</b>, коли записують дитину на IT-курс, і що відбувалося до цього моменту. Ми не питаємо, що людям «подобається»: ми відновлюємо реальну історію покупки.</p>
+<div class="grid2">
+<div class="card" style="background:var(--sky)"><h3>Що хочемо отримати</h3><ul><li>Перевірити 4 гіпотези «робіт» батьків з концепції продажів</li><li>Зібрати живі слова батьків для реклами й сайту</li><li>Дізнатися, що ледь не зупинило від покупки</li><li>Зрозуміти, з чим нас насправді порівнюють</li></ul></div>
+<div class="card" style="background:var(--peach)"><h3>Чого не робимо</h3><ul><li>Не продаємо й не переконуємо</li><li>Не захищаємо школу у відповідь на критику</li><li>Не питаємо «а ви б купили, якщо…»</li><li>Не проводимо опитування з варіантами відповідей</li></ul></div>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="sec">
+<h2><span class="n">2</span>Кого запрошувати</h2>
+<table>
+<tr><th>Група</th><th>Скільки</th><th>Чому важливо</th></tr>
+<tr><td><b>Купили за останні 1–3 місяці</b></td><td>6–8</td><td>Добре пам’ятають, як ухвалювали рішення</td></tr>
+<tr><td><b>Пішли після пробного уроку</b></td><td>3–4</td><td>Покажуть, що нас гальмує і кого обирають замість нас</td></tr>
+<tr><td><b>Навчаються понад рік</b></td><td>2–3</td><td>Розкажуть, чому залишаються і що цінують</td></tr>
+</table>
+<ul>
+<li>Змішуйте вік дітей (7–9, 10–12, 13–16), курси й формат (онлайн та офлайн).</li>
+<li>Не запрошуйте родичів і друзів працівників: вони будуть надто ввічливими.</li>
+<li>Зазвичай після 8–10 розмов нові відповіді майже перестають з’являтися. Це нормальний сигнал зупинитися.</li>
+</ul>
+</div>
+
+<!-- 3 -->
+<div class="sec">
+<h2><span class="n">3</span>Як запросити</h2>
+<div class="say"><b>Тим, хто навчається</b>Добрий день, [ім’я]! Це [ваше ім’я] зі школи «Логіка». Ми хочемо стати кращими й шукаємо батьків, які погодяться хвилин 40 розповісти, як обирали курс для [ім’я дитини]. Нічого продавати не будемо — нам просто важливо почути ваш досвід. На знак подяки — [бонус]. Чи зручно вам [день] о [час] у Zoom або телефоном?</div>
+<div class="say" style="background:var(--pink)"><b>Тим, хто пішов після пробного уроку</b>Добрий день, [ім’я]! Це [ваше ім’я] з «Логіки». Ви були в нас на пробному уроці, але вирішили не продовжувати — це нормально, і ми не будемо вас переконувати. Нам дуже допоможе, якщо ви чесно розповісте, що вплинуло на рішення. Розмова займе близько 30 хвилин, на знак подяки — [бонус]. Коли вам було б зручно?</div>
+<div class="tip"><b>Порада</b><p>Бонус має бути корисним, але не зобов’язувати купувати: наприклад, подарунковий сертифікат у книгарню або чек-лист для батьків. Знижка на курс підходить лише тим, хто вже навчається.</p></div>
+</div>
+
+<!-- 4 -->
+<div class="sec">
+<h2><span class="n">4</span>Підготовка</h2>
+<div class="grid2">
+<div class="card"><h3>Хто проводить</h3><ul><li>Двоє: ведучий і людина, яка нотує</li><li>Не той менеджер, що продавав курс цій родині</li><li>Ведучий не дивиться в екран, а слухає</li></ul></div>
+<div class="card"><h3>Що потрібно</h3><ul><li>Тихе місце й 60 хвилин у календарі</li><li>Дозвіл на запис (спитати на початку)</li><li>Цей сценарій і шаблон нотаток (розділ 9)</li></ul></div>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="sec pb">
+<h2><span class="n">5</span>Сім правил хорошого інтерв’ю</h2>
+<div class="grid2">
+<div class="card" style="background:var(--sky)"><h3>1. Питайте про минуле</h3><p>«Що ви зробили?», а не «Що б ви зробили?». Прогнози про майбутнє майже завжди неточні.</p></div>
+<div class="card" style="background:var(--sky)"><h3>2. Шукайте конкретні моменти</h3><p>Коли це було, де, хто був поруч, що сказали. Чим більше деталей, тим правдивіша історія.</p></div>
+<div class="card" style="background:var(--peach)"><h3>3. Не продавайте й не виправдовуйтеся</h3><p>Критика — найцінніше, що можна почути. Відповідайте «Дякую, розкажіть детальніше».</p></div>
+<div class="card" style="background:var(--peach)"><h3>4. Не підказуйте відповіді</h3><p>Не «Вам було дорого?», а «Як ви вирішували питання грошей?».</p></div>
+<div class="card" style="background:var(--pink)"><h3>5. Перепитуйте</h3><p>«Що ви мали на увазі?», «А що було перед цим?», «Чому саме тоді?»</p></div>
+<div class="card" style="background:var(--pink)"><h3>6. Витримуйте паузу</h3><p>Помовчіть 3–5 секунд після відповіді. Найцікавіше люди часто додають саме тоді.</p></div>
+</div>
+<div class="card" style="background:var(--lilac)"><h3>7. Емоція — це сигнал</h3><p>Якщо змінився голос, людина засміялася чи зітхнула, тут щось важливе. Зупиніться й спитайте: «Здається, це було непросто. Що тоді відбувалося?»</p></div>
+<table>
+<tr><th>Замість цього</th><th>Краще спитати так</th></tr>
+<tr><td>«Вам сподобався курс?»</td><td>«Що дитина розповідала після першого уроку?»</td></tr>
+<tr><td>«Чому ви обрали нас?»</td><td>«Пригадайте день, коли вирішили записатися. Що відбувалося?»</td></tr>
+<tr><td>«Ціна нормальна?»</td><td>«З чим ви порівнювали вартість? Як ухвалювали рішення?»</td></tr>
+<tr><td>«Ви б нас порекомендували?»</td><td>«Кому ви вже розповідали про школу? Що саме сказали?»</td></tr>
+</table>
+</div>
+
+<!-- 6 -->
+<div class="sec">
+<h2><span class="n">6</span>Сценарій розмови</h2>
+<p class="goal">Рухаємося за хронологією: від першої думки до того, що змінилося після покупки. Курсивом — підказки для ведучого, вголос їх не читаємо.</p>
+
+<div class="block"><div class="hd"><h3>Вступ</h3><span>3 хв</span></div><div class="bd">
+<div class="say" style="box-shadow:none"><b>Вголос</b>Дякую, що знайшли час. Розмова займе хвилин 40. Тут немає правильних чи неправильних відповідей: нам цікава ваша історія — як усе було насправді, зокрема й те, що вам не сподобалося. Я нічого не продаю і не ображуся на критику. Можна я запишу розмову? Запис почує лише наша команда.</div>
+</div></div>
+
+<div class="block"><div class="hd"><h3>Блок 1. Знайомство</h3><span>3–5 хв</span></div><div class="bd">
+<p class="goal">Мета: розговорити й зрозуміти контекст родини.</p>
+<ol class="q"><li>Розкажіть трохи про [ім’я дитини]: скільки років, чим захоплюється?</li><li>Як дитина зазвичай проводить вільний час?</li><li>Скільки часу вона проводить за комп’ютером чи телефоном? Як ви до цього ставитеся?</li></ol>
+</div></div>
+
+<div class="block"><div class="hd"><h3>Блок 2. Перша думка</h3><span>5 хв</span></div><div class="bd">
+<p class="goal">Мета: знайти момент, коли вперше з’явилася потреба. Це ядро «роботи».</p>
+<ol class="q"><li>Пригадайте, коли ви вперше подумали, що дитині потрібен гурток чи курс, пов’язаний з комп’ютером. Що тоді сталося?</li><li>Де ви були? Хто був поруч? <i>Шукаємо конкретну сцену.</i></li><li>Чому саме тоді, а не раніше?</li><li>Що ви тоді відчували? <i>Тривогу, провину, азарт, гордість?</i></li></ol>
+</div></div>
+
+<div class="block"><div class="hd"><h3>Блок 3. Пасивний пошук</h3><span>5 хв</span></div><div class="bd">
+<p class="goal">Мета: зрозуміти, що відбувалося, поки рішення «дозрівало», і що пробували самі.</p>
+<ol class="q"><li>Що було далі? Ви одразу почали шукати чи думка якийсь час просто була з вами?</li><li>Що ви помічали, читали, з ким про це говорили?</li><li>Що пробували самі: YouTube, застосунки, книжки, інші гуртки? Чим це закінчилося?</li></ol>
+</div></div>
+
+<div class="block"><div class="hd"><h3>Блок 4. Активний пошук</h3><span>7 хв</span></div><div class="bd">
+<p class="goal">Мета: знайти подію-поштовх і справжніх конкурентів.</p>
+<ol class="q"><li>Що стало поштовхом почати шукати всерйоз? <i>Часто це конкретна подія: сварка, оцінка, новина, розмова.</i></li><li>Як ви шукали: Google, Instagram, поради знайомих, чати батьків?</li><li>Які школи чи інші варіанти розглядали? Що в них сподобалося, а що ні?</li><li>Як ви дізналися про «Логіку»? Що побачили першим?</li><li>Хто ще брав участь у рішенні: партнер, бабуся, сама дитина?</li></ol>
+</div></div>
+
+<div class="block"><div class="hd"><h3>Блок 5. Вибір і сумніви</h3><span>7 хв</span></div><div class="bd">
+<p class="goal">Мета: знайти тривоги й звички, які гальмували покупку, і що їх зняло.</p>
+<ol class="q"><li>Що зрештою переконало записатися саме до нас?</li><li>Що мало не зупинило? Які були сумніви?</li><li>Як ви вирішували питання ціни? З чим порівнювали?</li><li>Що допомогло зняти сумніви?</li><li>Якби нас не було, що б ви робили? <i>Це і є наш справжній конкурент.</i></li></ol>
+</div></div>
+
+<div class="block"><div class="hd"><h3>Блок 6. Рішення</h3><span>5 хв</span></div><div class="bd">
+<p class="goal">Мета: відновити сам момент покупки.</p>
+<ol class="q"><li>Пригадайте момент, коли ви сказали: «Все, беремо». Де це було? Що цьому передувало?</li><li>Яку роль відіграв пробний урок? Що найбільше запам’яталося?</li><li>Що сказала дитина після пробного уроку?</li></ol>
+</div></div>
+
+<div class="block"><div class="hd"><h3>Блок 7. Перший досвід</h3><span>5 хв</span></div><div class="bd">
+<p class="goal">Мета: зрозуміти, чи «робота» виконана, і що впливає на утримання.</p>
+<ol class="q"><li>Що змінилося вдома за перший місяць?</li><li>Чого ви очікували, і що вийшло інакше — краще чи гірше?</li><li>Чи був момент, коли хотілося кинути? Що тоді сталося?</li><li>Кому ви розповідали про школу? Що саме казали?</li></ol>
+</div></div>
+
+<div class="block"><div class="hd"><h3>Завершення</h3><span>3 хв</span></div><div class="bd">
+<ol class="q"><li>Що б ви порадили батькам, які зараз думають про IT-курс для дитини?</li><li>Чи можемо ми анонімно використати ваші слова в наших матеріалах?</li></ol>
+<div class="say" style="box-shadow:none"><b>Вголос</b>Дуже дякую, це нам дуже допоможе. [Розповісти, як отримати бонус.]</div>
+</div></div>
+</div>
+
+<!-- 7 -->
+<div class="sec">
+<h2><span class="n">7</span>Окремо: для тих, хто пішов після пробного уроку</h2>
+<p class="goal">Блоки 1–4 такі самі. Замість блоків 5–7 питаємо:</p>
+<div class="card" style="background:var(--pink)"><ol class="q"><li>Чого ви очікували від пробного уроку?</li><li>Що відбувалося на уроці? Що потім розповіла дитина?</li><li>У який момент ви зрозуміли, що не продовжуватимете?</li><li>Що ви обрали замість нас? Чому саме це?</li><li>Що мало бути інакше, щоб ви залишилися?</li></ol></div>
+</div>
+
+<!-- 8 -->
+<div class="sec">
+<h2><span class="n">8</span>Коротка розмова з дитиною</h2>
+<p class="goal">5–7 хвилин, лише з дозволу батьків і в їхній присутності.</p>
+<div class="grid2">
+<div class="card" style="background:var(--peach)"><h3>Питання</h3><ol class="q"><li>Що ти робиш на уроках? Покажеш щось?</li><li>Що тобі найбільше подобається? А що нудно?</li><li>Кому ти показував свій проєкт? Що вони сказали?</li><li>Що хочеш зробити далі?</li><li>Якби друг спитав, чи варто сюди йти, що б ти сказав?</li></ol></div>
+<div class="card"><h3>Як говорити з дитиною</h3><ul><li>Простими словами й короткими питаннями</li><li>Не оцінюйте відповіді й не хваліть за «правильні»</li><li>Попросіть показати проєкт: діти охочіше показують, ніж розповідають</li><li>Якщо дитина соромиться, не тисніть</li></ul></div>
+</div>
+</div>
+
+<!-- 9 TEMPLATE -->
+<div class="sec pb">
+<h2><span class="n">9</span>Шаблон нотаток</h2>
+<p class="goal">Заповнюйте одразу після розмови, поки все свіже. Одна сторінка — одне інтерв’ю.</p>
+<table>
+<tr><td style="width:34%"><b>Батьки / дитина, вік</b></td><td></td></tr>
+<tr><td><b>Курс і формат</b></td><td></td></tr>
+<tr><td><b>Група</b></td><td>☐ купили нещодавно &nbsp; ☐ пішли після пробного &nbsp; ☐ навчаються понад рік</td></tr>
+</table>
+<h3 style="margin-top:6px">Хронологія</h3>
+<table class="fill">
+<tr><th style="width:34%">Етап</th><th>Що відбувалося (коли, де, хто)</th></tr>
+<tr><td><b>Перша думка</b></td><td></td></tr>
+<tr><td><b>Пасивний пошук</b></td><td></td></tr>
+<tr><td><b>Подія-поштовх</b></td><td></td></tr>
+<tr><td><b>Активний пошук і варіанти</b></td><td></td></tr>
+<tr><td><b>Рішення</b></td><td></td></tr>
+<tr><td><b>Перший місяць</b></td><td></td></tr>
+</table>
+<h3 style="margin-top:6px">Сили прогресу</h3>
+<div class="forces">
+<div style="background:var(--peach)">Поштовх: що не влаштовувало</div>
+<div style="background:var(--sky)">Тяжіння: що приваблювало</div>
+<div style="background:var(--pink)">Тривоги: чого боялися</div>
+<div style="background:var(--cream)">Звички: що тримало на місці</div>
+</div>
+<h3 style="margin-top:6px">Робота (job story)</h3>
+<div class="card" style="box-shadow:none;gap:10px">
+<p><b>Коли</b> <span style="display:inline-block;width:88%" class="line"></span></p>
+<p><b>я хочу</b> <span style="display:inline-block;width:86%" class="line"></span></p>
+<p><b>щоб</b> <span style="display:inline-block;width:90%" class="line"></span></p>
+</div>
+<h3 style="margin-top:6px">Найяскравіші цитати</h3>
+<div class="line"></div><div class="line"></div><div class="line"></div>
+</div>
+
+<!-- 10 -->
+<div class="sec pb">
+<h2><span class="n">10</span>Як аналізувати результати</h2>
+<div class="card" style="background:var(--cream)"><ol>
+<li><b>Одразу після розмови</b> витратьте 10 хвилин на шаблон нотаток.</li>
+<li><b>Випишіть цитати на окремі картки:</b> одна думка — одна картка. Підійде дошка в Miro, FigJam або звичайні стікери.</li>
+<li><b>Згрупуйте картки</b> за етапами хронології та за чотирма силами прогресу.</li>
+<li><b>Знайдіть повторювані ситуації.</b> Якщо ситуація трапляється у 3 і більше розмовах, це кандидат на «роботу».</li>
+<li><b>Сформулюйте 3–5 job stories</b> і порівняйте з чотирма гіпотезами з концепції: що підтвердилося, що ні, що виявилося новим.</li>
+<li><b>Оновіть матеріали:</b> тексти реклами (словами батьків), питання квізу, скрипт пробного уроку, відповіді на типові сумніви.</li>
+</ol></div>
+<table>
+<tr><th>Що знайшли</th><th>Куди застосувати</th></tr>
+<tr><td>Ситуація «першої думки»</td><td>Перша фраза реклами й заголовок лендингу</td></tr>
+<tr><td>Подія-поштовх</td><td>Таргетинг і час запуску кампаній (наприклад, після батьківських зборів чи канікул)</td></tr>
+<tr><td>Тривоги</td><td>FAQ, гарантія, скрипт менеджера після пробного уроку</td></tr>
+<tr><td>Справжні конкуренти</td><td>Порівняння на сайті й аргументи в рекламі</td></tr>
+<tr><td>Що змінилося після покупки</td><td>Відгуки, кейси, щомісячний звіт батькам</td></tr>
+</table>
+<div class="tip"><b>Важливо</b><p>Не робіть висновків за одним-двома інтерв’ю. Яскрава історія запам’ятовується краще, але рішення ухвалюємо за тим, що повторюється.</p></div>
+</div>
+
+</body>
+</html>
